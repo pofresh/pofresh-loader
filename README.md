@@ -1,4 +1,4 @@
-#pofresh-loader - loader module for pofresh
+# pofresh-loader - loader module for pofresh
 
 Load codes for pofresh based on the convention over configuration rules.
 
@@ -6,7 +6,7 @@ pofresh-rpc could load modules in batch but not load the sub-directory recursive
 
 + Tags: node.js
 
-##Regulation
+## Regulation
 Module name
 
 Module would use the filename by default. For example: load ```lib/a.js``` and the return result would be: ```{a: require('./lib/a')}```
@@ -29,12 +29,12 @@ module.exports = function(context) {
 };
 ```
 
-##Installation
+## Installation
 ```
 npm install pofresh-loader
 ```
 
-##Usage
+## Usage
 ``` javascript
 var Loader = require('pofresh-loader');
 
@@ -42,9 +42,9 @@ var res = Loader.load('.');
 console.log('res: %j', res);
 ```
 
-##API
-###Loader.load(path, context)
+## API
+### Loader.load(path, context)
 Load all modules in the path.
-####Parameters
+#### Parameters
 + path loaded path
 + context if the module provides a factory method, the context would be pass as a parameter as the factory method.
