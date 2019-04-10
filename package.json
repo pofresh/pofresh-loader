@@ -1,0 +1,9 @@
+{
+	"name": "pofresh-loader",
+	"version": "1.0.0",
+	"dependencies": {},
+	"devDependencies": {
+		"mocha": ">=0.0.1",
+		"should": ">=0.0.1"
+	}
+}
