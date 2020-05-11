@@ -1,7 +1,7 @@
-module.exports = function() {
-	return {
-		doService: function(cb) {
+module.exports = function () {
+    return {
+        doService(cb) {
 
-		}
-	};	
+        }
+    };
 };
