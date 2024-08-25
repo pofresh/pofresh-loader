@@ -65,17 +65,41 @@ describe('loader', function() {
 		});
 		
 		it('should throw an error if the path is empty', function() {
-			let path = './mock-remote/connector';
+			const path = './mock-remote/connector';
 			(function() {
 				Loader.load(path);
 			}).should.throw();
 		});
 		
 		it('should throw exception if the path dose not exist', function() {
-			let path = './some/error/path';
+			const path = './some/error/path';
 			(function() {
 				Loader.loadPath(path);
 			}).should.throw();
+		});
+
+		it('should reload module', function() {
+			const path = __dirname + '/mock-remote/service';
+			let services = Loader.load(path);
+			should.exist(services);
+			services.reloadService.doService(function (err, res){
+				res.should.equal(1);
+			});
+
+			services.reloadService.doService(function (err, res){
+				res.should.equal(2);
+			});
+
+			services = Loader.load(path, null, true);
+			should.exist(services);
+
+			services.reloadService.doService(function (err, res){
+				res.should.equal(1);
+			});
+
+			services.reloadService.doService(function (err, res){
+				res.should.equal(2);
+			});
 		});
 	});
 });
